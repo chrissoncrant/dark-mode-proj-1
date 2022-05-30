@@ -66,7 +66,7 @@ nav {
   letter-spacing: 3px;
   padding: 25px;
   width: 100vw;
-  background: rgb(255 255 255 / 50%);
+  background: rgba(255, 255, 255, 0.754);
 }
 
 a {
@@ -94,7 +94,7 @@ a:focus {
 }
 
 .image-container {
-  border: 1px solid var(--secondary-color);
+  border: 2px solid var(--secondary-color);
   border-radius: 10px;
   padding: 10px 20px;
   margin-right: 25px;
@@ -114,6 +114,7 @@ img {
 }
 
 /* Projects Section */
+
 .buttons-container {
   margin-top: 15px;
   margin-bottom: 50px;
@@ -135,8 +136,17 @@ button:disabled {
   cursor: default;
 }
 
+
+.outline:disabled {
+  background-color: transparent
+}
+
 button:hover:not(.outline) {
   filter: brightness(110%);
+}
+
+button:hover:disabled {
+  filter: brightness(100%);
 }
 
 .primary {
@@ -163,6 +173,11 @@ button:hover:not(.outline) {
 .outline:hover {
   background: var(--primary-color);
   color: var(--on-primary);
+}
+
+.outline:hover:disabled {
+  background: transparent;
+  color: rgba(66, 66, 66);
 }
 
 .text-box {
