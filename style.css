@@ -215,21 +215,28 @@ p {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  z-index: 100;
+  z-index: 11;
   position: fixed;
   right: 25px;
   top: 30px;
 }
 
-.theme-switch-wrapper span {
+.theme-switch-wrapper #toggle-icon {
   margin-right: 10px;
   font-size: 1rem;
+  /* border: 2px solid black; */
+  display:flex;
+  align-items: center;
+}
+
+.theme-switch-wrapper #toggle-icon span {
+  /* border: 2px solid black; */
+  padding-top: 4px;
+  margin-right: 7px;
 }
 
 .toggle-text {
   position: relative;
-  top: -4px;
-  right: 5px;
   color: var(--on-background);
 }
 
@@ -240,7 +247,7 @@ p {
   width: 60px;
 }
 
-.theme-switch input {
+#theme-checkbox {
   display: none;
 }
 
@@ -266,11 +273,11 @@ p {
   width: 26px;
 }
 
-input:checked + .slider {
+input:checked + .theme-switch .slider {
   background: var(--primary-color);
 }
 
-input:checked + .slider::before {
+input:checked + .theme-switch .slider::before {
   transform: translateX(26px);
 }
 
