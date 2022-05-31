@@ -1,11 +1,16 @@
 const checkbox = document.querySelector('input');
 const themeSwitch = document.querySelector('.theme-switch');
 
-let count = 0;
-themeSwitch.addEventListener('click', (e) => {
+themeSwitch.addEventListener('click', () => {
     const icon = document.querySelector('.fa-solid');
-    count++;
-    console.log(count);
-
-    console.log(icon);
-})
+    const toggleText = document.querySelector('.toggle-text');
+    if (!checkbox.checked) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-star-and-crescent');
+        toggleText.textContent = 'Dark Mode';
+    } else {
+        icon.classList.add('fa-sun');
+        icon.classList.remove('fa-star-and-crescent');
+        toggleText.textContent = 'Light Mode';
+    }
+});

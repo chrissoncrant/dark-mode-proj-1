@@ -37,6 +37,11 @@ body {
   font-family: var(--serif)
 }
 
+/* header {
+  display: flex;
+  align-items: center;
+} */
+
 section {
   min-height: 100vh;
   display: flex;
@@ -60,13 +65,21 @@ h2 {
 
 /* Navigation */
 nav {
-  z-index: 10;
+  /* z-index: 10; */
   position: fixed;
   font-size: 24px;
   letter-spacing: 3px;
-  padding: 25px;
+  padding: 20px;
   width: 100vw;
   background: rgba(255, 255, 255, 0.754);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 a {
@@ -215,10 +228,10 @@ p {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  z-index: 11;
+  z-index: 1;
   position: fixed;
   right: 25px;
-  top: 30px;
+  top: 18px;
 }
 
 .theme-switch-wrapper #toggle-icon {
@@ -238,6 +251,7 @@ p {
 .toggle-text {
   position: relative;
   color: var(--on-background);
+  font-size: 18px;
 }
 
 .theme-switch {
@@ -289,7 +303,51 @@ input:checked + .theme-switch .slider::before {
   border-radius: 50%;
 }
 
-.fas {
+.fa-solid {
   font-size: 30px;
-  margin-right: 5px;
+  margin: 0 7px;
 }
+
+@media  screen and (max-width: 775px) {
+
+    .toggle-text {
+      display: none;
+    }
+
+    /* #toggle-icon i {
+      display: none;
+    }
+
+    .theme-switch {
+      top: 18px;
+    } */
+  
+}
+
+@media  screen and (max-width: 670px) {
+
+  #toggle-icon i {
+    display: none;
+  }
+
+  /* .theme-switch {
+    top: 18px;
+  } */
+
+}
+
+@media  screen and (max-width: 615px) {
+  ul {
+    width: 70%;
+  }
+
+  .theme-switch {
+    top: 18px;
+  }
+
+}
+/* @media  screen and (max-width: 670px) {
+
+  
+
+} */
