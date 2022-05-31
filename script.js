@@ -18,9 +18,10 @@ themeSwitch.addEventListener('click', () => {
         Array.from(toggleIcons).forEach(el => {
             el.style.color = "#9641ff"
         });
-        image1.setAttribute('src', './images/undraw_nature_on_screen_xkli-dark.svg');
-        image2.setAttribute('src', './images/undraw_explore_re_8l4v-dark.svg');
-        image3.setAttribute('src', './images/undraw_through_the_park_lxnl-dark.svg');
+        // image1.setAttribute('src', './images/undraw_nature_on_screen_xkli-dark.svg');
+        // image2.setAttribute('src', './images/undraw_explore_re_8l4v-dark.svg');
+        // image3.setAttribute('src', './images/undraw_through_the_park_lxnl-dark.svg');
+        changeImages('dark');
     } else {
         icon.classList.add('fa-sun');
         icon.classList.remove('fa-star-and-crescent');
@@ -31,8 +32,12 @@ themeSwitch.addEventListener('click', () => {
         Array.from(toggleIcons).forEach(el => {
             el.style.color = "#424242";
         })
-        image1.setAttribute('src', './images/undraw_nature_on_screen_xkli-light.svg');
-        image2.setAttribute('src', './images/undraw_explore_re_8l4v-light.svg');
-        image3.setAttribute('src', './images/undraw_through_the_park_lxnl-light.svg');
+        changeImages('light');
     };
 });
+
+function changeImages(color) {
+    image1.setAttribute('src', `./images/undraw_nature_on_screen_xkli-${color}.svg`);
+    image2.setAttribute('src', `./images/undraw_explore_re_8l4v-${color}.svg`);
+    image3.setAttribute('src', `./images/undraw_through_the_park_lxnl-${color}.svg`);
+}
