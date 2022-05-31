@@ -5,12 +5,17 @@ const image1 = document.getElementById('img-1');
 const image2 = document.getElementById('img-2');
 const image3 = document.getElementById('img-3');
 
+const theme = localStorage.getItem('theme');
+
+
+
+
 themeSwitch.addEventListener('click', () => {
     const icon = document.querySelector('.fa-solid');
     const toggleText = document.querySelector('.toggle-text');
+    console.log('test')
     if (!checkbox.checked) {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-star-and-crescent');
+        icon.classList.replace('fa-sun', 'fa-star-and-crescent');
         toggleText.textContent = 'Dark Mode';
         document.documentElement.setAttribute('data-theme', 'dark');
         document.getElementById('outline-disabled-btn').classList.add('dark-outline');
@@ -18,13 +23,10 @@ themeSwitch.addEventListener('click', () => {
         Array.from(toggleIcons).forEach(el => {
             el.style.color = "#9641ff"
         });
-        // image1.setAttribute('src', './images/undraw_nature_on_screen_xkli-dark.svg');
-        // image2.setAttribute('src', './images/undraw_explore_re_8l4v-dark.svg');
-        // image3.setAttribute('src', './images/undraw_through_the_park_lxnl-dark.svg');
         changeImages('dark');
+        localStorage.setItem('theme', 'dark');
     } else {
-        icon.classList.add('fa-sun');
-        icon.classList.remove('fa-star-and-crescent');
+        icon.classList.replace('fa-star-and-crescent', 'fa-sun');
         toggleText.textContent = 'Light Mode';
         document.documentElement.setAttribute('data-theme', 'light')
         document.getElementById('outline-disabled-btn').classList.remove('dark-outline');
@@ -33,6 +35,7 @@ themeSwitch.addEventListener('click', () => {
             el.style.color = "#424242";
         })
         changeImages('light');
+        localStorage.setItem('theme', 'light');
     };
 });
 
@@ -41,3 +44,9 @@ function changeImages(color) {
     image2.setAttribute('src', `./images/undraw_explore_re_8l4v-${color}.svg`);
     image3.setAttribute('src', `./images/undraw_through_the_park_lxnl-${color}.svg`);
 }
+
+if (theme === null || theme === 'light') {
+    checkbox.checked = false;
+} else {
+    themeSwitch.click();
+};
