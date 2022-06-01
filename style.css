@@ -321,6 +321,30 @@ input:checked + .theme-switch .slider::before {
     }
 }
 
+@media  screen and (max-width: 1115px) {
+  .image-container {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 95%;
+  }
+}
+@media  screen and (max-width: 915px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .image-container {
+    width: 260px;
+    margin-right: 0;
+  }
+}
+
 @media  screen and (max-width: 670px) {
   #toggle-icon i {
     display: none;
