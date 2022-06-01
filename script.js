@@ -7,13 +7,9 @@ const image3 = document.getElementById('img-3');
 
 const theme = localStorage.getItem('theme');
 
-
-
-
 themeSwitch.addEventListener('click', () => {
     const icon = document.querySelector('.fa-solid');
     const toggleText = document.querySelector('.toggle-text');
-    console.log('test')
     if (!checkbox.checked) {
         icon.classList.replace('fa-sun', 'fa-star-and-crescent');
         toggleText.textContent = 'Dark Mode';
