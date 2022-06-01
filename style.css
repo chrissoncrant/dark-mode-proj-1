@@ -315,6 +315,10 @@ input:checked + .theme-switch .slider::before {
     .toggle-text {
       display: none;
     }
+
+    h1 {
+      font-size: 70px;
+    }
 }
 
 @media  screen and (max-width: 670px) {
